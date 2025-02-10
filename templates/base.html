@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="{% url 'home' %}">Ana Sayfa</a>
+                <a href="{% url 'project_list' %}">Projeler</a>
+                <a href="{% url 'blog_list' %}">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {% now "Y" %} Portfolio. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html> 

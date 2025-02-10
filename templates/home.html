@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Ana Sayfa - Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Hoş Geldiniz</h1>
+    <p>Yazılım geliştirici portföyüme hoş geldiniz.</p>
+</section>
+
+<section class="featured-projects">
+    <h2>Öne Çıkan Projeler</h2>
+    <div class="project-grid">
+        {% for project in projects %}
+        <div class="project-card">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description|truncatewords:30 }}</p>
+            <a href="{% url 'project_detail' project.slug %}">Detaylar</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %} 

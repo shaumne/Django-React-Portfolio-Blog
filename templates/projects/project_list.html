@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Projeler{% endblock %}
+
+{% block content %}
+<h1>Projeler</h1>
+<div class="project-grid">
+    {% for project in projects %}
+    <div class="project-card">
+        {% if project.image %}
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        {% endif %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description|truncatewords:30 }}</p>
+        <div class="technologies">
+            {% for tech in project.technologies.all %}
+            <span class="tech-tag">{{ tech.name }}</span>
+            {% endfor %}
+        </div>
+        <a href="{% url 'project_detail' project.slug %}" class="btn">Detaylar</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
