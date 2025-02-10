@@ -65,5 +65,5 @@ MIT
 
 ## 👤 Contact
 
-- GitHub: @Shaumne
+- GitHub: @shaumne
 - Upwork: [https://www.upwork.com/freelancers/emrecancetinkaya]
