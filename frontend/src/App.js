@@ -5,6 +5,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/layout/Navbar';
 import ProjectList from './components/projects/ProjectList';
 import ProjectDetail from './components/projects/ProjectDetail';
+import PostList from './components/blog/PostList';
+import PostDetail from './components/blog/PostDetail';
+import Home from './components/home/Home';
 
 const theme = createTheme({
   palette: {
@@ -74,9 +77,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProjectList />} />
+          <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectList />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="/blog" element={<PostList />} />
+          <Route path="/blog/:slug" element={<PostDetail />} />
         </Routes>
       </Router>
     </ThemeProvider>
